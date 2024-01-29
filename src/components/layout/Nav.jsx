@@ -12,11 +12,11 @@ function Nav() {
           htmlFor="side-menu"
           className="flex-none lg:hidden btn btn-square btn-ghost w-10 sm:w-auto"
         >
-          <FontAwesomeIcon icon={faBars} color="#000000" />
+          <FontAwesomeIcon icon={faBars} color="#000000" className="fa-lg" />
         </label>
         <h1 className="shrink-0 flex md:flex-none flex-1 mx-1 sm:mx-2">
           <a
-            className="text-lg text-gray-700 dark:text-white font-bold whitespace-nowrap"
+            className="text-xl text-gray-700 dark:text-white font-bold whitespace-nowrap"
             href="/"
           >
             React Shop
@@ -24,19 +24,19 @@ function Nav() {
         </h1>
         <div className="flex-none hidden md:flex md:flex-1 ml-2">
           <a
-            className="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
+            className="btn btn-ghost btn-sm rounded-btn text-gray-700  dark:text-white "
             href="/"
           >
             패션
           </a>
           <a
-            className="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
+            className="btn btn-ghost btn-sm rounded-btn text-gray-700  dark:text-white"
             href="/"
           >
             액세서리
           </a>
           <a
-            className="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
+            className="btn btn-ghost btn-sm rounded-btn text-gray-700  dark:text-white"
             href="/"
           >
             디지털
@@ -49,6 +49,19 @@ function Nav() {
             <FontAwesomeIcon icon={faMoon} size="2x" color="#ffffff" />
           </label>
           <div className="dropdwon">
+            <button
+              type="button"
+              className="flex sm:hidden w-10 sm:w-auto mx-0 px-0 sm:mx-2 sm:px-2 btn btn-ghost js-search"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 stroke-gray-700 dark:stroke-white"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </button>
             <input
               type="text"
               placeholder="검색"

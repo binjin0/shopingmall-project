@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
   return (
-    <footer className=" p-10  footer bg-base-200 text-base-content footer-center ">
+    <footer className=" p-10  w-screen footer bg-base-200 text-base-content footer-center ">
       <div className="grid grid-flow-col gap-4">
         <a
           rel="noreferrer noopener external"
@@ -25,23 +25,23 @@ export default function Footer() {
       </div>
       <ul className="flex">
         <li>
-          <FontAwesomeIcon icon={faCcVisa} className="" />
+          <FontAwesomeIcon icon={faCcVisa} className="fa-lg" />
           {/* <title id="pi-visa">Visa</title> */}
         </li>
         <li>
-          <FontAwesomeIcon icon={faCcMastercard} />
+          <FontAwesomeIcon icon={faCcMastercard} className="fa-lg" />
         </li>
         <li>
-          <FontAwesomeIcon icon={faCcAmex} />
+          <FontAwesomeIcon icon={faCcAmex} className="fa-lg" />
         </li>
         <li>
-          <FontAwesomeIcon icon={faCcPaypal} />
+          <FontAwesomeIcon icon={faCcPaypal} className="fa-lg" />
         </li>
         <li>
-          <FontAwesomeIcon icon={faCcDinersClub} />
+          <FontAwesomeIcon icon={faCcDinersClub} className="fa-lg" />
         </li>
         <li>
-          <FontAwesomeIcon icon={faCcDiscover} />
+          <FontAwesomeIcon icon={faCcDiscover} className="fa-lg" />
         </li>
       </ul>
       <div>
@@ -53,7 +53,7 @@ export default function Footer() {
             target="_blank"
             href="https://www.facebook.com/0base"
           >
-            <FontAwesomeIcon icon={faFacebookF} />
+            <FontAwesomeIcon icon={faFacebookF} size="2x" />
           </a>
           <a
             rel="noreferrer noopener external"
@@ -62,7 +62,7 @@ export default function Footer() {
             target="_blank"
             href="https://www.instagram.com/zerobase.official/"
           >
-            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>
 
           <a
@@ -72,7 +72,7 @@ export default function Footer() {
             target="_blank"
             href=""
           >
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
         </div>
       </div>
