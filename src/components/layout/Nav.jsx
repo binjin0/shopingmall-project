@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
@@ -15,32 +16,32 @@ function Nav() {
           <FontAwesomeIcon icon={faBars} color="#000000" className="fa-lg" />
         </label>
         <h1 className="shrink-0 flex md:flex-none flex-1 mx-1 sm:mx-2">
-          <a
+          <Link
             className="text-xl text-gray-700 dark:text-white font-bold whitespace-nowrap"
-            href="/"
+            to="/"
           >
             React Shop
-          </a>
+          </Link>
         </h1>
         <div className="flex-none hidden md:flex md:flex-1 ml-2">
-          <a
+          <Link
             className="btn btn-ghost btn-sm rounded-btn text-gray-700  dark:text-white "
-            href="/"
+            to="/Fashion"
           >
             패션
-          </a>
-          <a
+          </Link>
+          <Link
             className="btn btn-ghost btn-sm rounded-btn text-gray-700  dark:text-white"
-            href="/"
+            to="/Accessory"
           >
             액세서리
-          </a>
-          <a
+          </Link>
+          <Link
             className="btn btn-ghost btn-sm rounded-btn text-gray-700  dark:text-white"
-            href="/"
+            to="/Digital"
           >
             디지털
-          </a>
+          </Link>
         </div>
         <div className="flex items-center px-2">
           <label className="swap swap-rotate mr-2 sm:mr-4">
