@@ -1,16 +1,23 @@
 import React from "react";
-import Nav from "./components/layout/Nav";
-import Footer from "./components/layout/Footer";
-import Content from "./components/layout/Content";
-// import Footer2 from "./layout/Footer2";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { RecoilRoot } from "recoil";
+import Main from "./views/Main";
+import Fashion from "./views/Fashion";
+import Digital from "./views/Digital";
+import Accessory from "./views/Accessory";
+import NotFound from "./views/NotFound";
 import "./App.css";
 function App() {
   return (
-    <div className="">
-      <Nav />
-      <Content />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={"/"} element={<Main />} />
+        <Route path={"/Fashion"} element={<Fashion />} />
+        <Route path={"/Digital"} element={<Digital />} />
+        <Route path={"/Accessory"} element={<Accessory />} />
+        <Route path={"/NotFound"} element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
