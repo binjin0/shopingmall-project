@@ -19,3 +19,13 @@ export default function ProductsLoad() {
   }, [setProductList]);
   return;
 }
+// <section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto">
+//   <div key={productList.id}>
+//     <div className="text-sm breadcrumbs">
+//       <ul>
+//         <li>액세서리</li>
+//         <li>{productList.title}</li>
+//       </ul>
+//     </div>
+//   </div>
+// </section>

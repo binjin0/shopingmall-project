@@ -6,6 +6,8 @@ import Fashion from "./views/Fashion";
 import Digital from "./views/Digital";
 import Accessory from "./views/Accessory";
 import NotFound from "./views/NotFound";
+import ProductDetail from "./views/ProductDetail";
+import Cart from "./views/Cart";
 import "./App.css";
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path={"/Digital"} element={<Digital />} />
         <Route path={"/Accessory"} element={<Accessory />} />
         <Route path={"/NotFound"} element={<NotFound />} />
+        <Route path={"/product/:id"} element={<ProductDetail />} />
+        <Route path={"/Cart"} element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

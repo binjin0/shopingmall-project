@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -6,12 +6,23 @@ import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Nav() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+    const addToCart = () => {
+      // You should implement the logic to add items to the cart
+      // For now, let's just increase the count for demonstration purposes
+      setCartCount(cartCount + 1);
+    };
+  };
   return (
     <div className="fixed z-10 w-full navbar shadow-lg bg-white dark:bg-neutral text-neutral-content ">
       <div className="flex w-full xl:container xl:m-auto">
         <label
           htmlFor="side-menu"
           className="flex-none lg:hidden btn btn-square btn-ghost w-10 sm:w-auto"
+          onClick={toggleSidebar}
         >
           <FontAwesomeIcon icon={faBars} color="#000000" className="fa-lg" />
         </label>
@@ -68,40 +79,64 @@ function Nav() {
               placeholder="검색"
               className="fixed left-0 top-4 -z-10 opacity-0 sm:opacity-100 sm:static sm:flex w-full input input-ghost focus:outline-0 rounded-none sm:rounded bg-gray-300 dark:bg-gray-600 !text-gray-800 dark:!text-white sm:transform-none transition-all js-searchInput"
             />
-            {/* <ul className="!fixed left-0 sm:!absolute sm:top-14 menu flex-nowrap dropdown-content w-full sm:w-64 max-h-96 shadow text-base-content overflow-y-auto overflow-x-hidden bg-white dark:bg-gray-600">
-              <li>
-                <button type="button" className="text-left js-searchedItem">
-                  <span className="text-gray-600 dark:text-white line-clamp-2"></span>
-                </button>
-              </li>
-              <li>
-                <button type="button" className="text-left js-searchedItem">
-                  <span className="text-gray-600 dark:text-white line-clamp-2"></span>
-                </button>
-              </li>
-              <li>
-                <button type="button" className="text-left js-searchedItem">
-                  <span className="text-gray-600 dark:text-white line-clamp-2"></span>
-                </button>
-              </li>
-              <li>
-                <button type="button" className="text-left js-searchedItem">
-                  <span className="text-gray-600 dark:text-white line-clamp-2"></span>
-                </button>
-              </li>
-            </ul> */}
           </div>
-          <a className="btn btn-ghost w-10 sm:w-12 ml-1" href="/">
+          <Link to="/Cart" className="btn btn-ghost w-10 sm:w-12 ml-1">
             <span className="relative">
               <FontAwesomeIcon
                 icon={faBagShopping}
                 className="h-6 w-6 stroke-gray-700 dark:stroke-white"
                 color="black"
               />
+              <span className="inline-flex items-center justify-center absolute top-0 right-0 px-2 py-1 rounded-full bg-red-500 text-xs font-bold leading-none text-gray-200 transform translate-x-1/2 -translate-y-1/2">
+                4
+              </span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
+      {/* Sidebar 영역 */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 z-50  bg-gray-300 opacity-70"
+          onClick={toggleSidebar}
+        >
+          <ul className="menu w-60 h-screen sm:w-80 p-4 overflow-y-auto bg-white dark:bg-base-100">
+            {/* Sidebar에 표시할 내용 */}
+
+            <li>
+              <Link
+                to="/Fashion"
+                className="text-black text-lg hover:text-gray-700 dark:text-white dark:hover:text-gray-300 "
+              >
+                패션
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/Accessory"
+                className="text-black text-lg hover:text-gray-700 dark:text-white dark:hover:text-gray-300  "
+              >
+                액세서리
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/Digital"
+                className="text-black text-lg hover:text-gray-700 dark:text-white dark:hover:text-gray-300 "
+              >
+                디지털
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+
+      <input type="checkbox" id="side-menu" className="hidden" />
+      <div
+        className={`fixed inset-y-0 left-0 w-80 bg-white dark:bg-gray-800 transform ${
+          isSidebarOpen ? "translate-x-0 ease-out" : "-translate-x-full ease-in"
+        }`}
+      ></div>
     </div>
   );
 }

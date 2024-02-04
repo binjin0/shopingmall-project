@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product, category }) => {
+const ProductCard = ({ product, category, onClick }) => {
   const [hovered, setHovered] = useState(null);
 
   const handleMouseEnter = () => {
@@ -14,10 +14,13 @@ const ProductCard = ({ product, category }) => {
 
   return (
     <Link
-      to="/"
+      to={`/product/${product.id}`}
       className="card card-bordered p-0 border-gray-200 dark:border-gray-800 card-compact lg:card-normal overflow-hidden relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={() => {
+        onClick(product.id);
+      }}
     >
       <figure className="flex h-80 bg-white overflow-hidden items-center justify-center transition-transform duration-300 transform">
         <img
@@ -31,7 +34,7 @@ const ProductCard = ({ product, category }) => {
       <div className="card-body bg-gray-100 dark:bg-gray-700">
         <p className="card-title text-base text-left">{product.title}</p>
         <p className="text-base text-left">${product.price}</p>
-        <p className="text-base text-left">{category}</p>
+        {/* <p className="text-base text-left">{category}</p> */}
       </div>
     </Link>
   );

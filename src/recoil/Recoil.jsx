@@ -8,3 +8,9 @@ export const productListState = atom({
   default: [],
   effects_UNSTABLE: [persistAtom],
 });
+
+export const cartState = atom({
+  key: "cartState", // 유일한 식별자
+  default: [], // 초기 상태 (장바구니가 비어있음)
+  effects_UNSTABLE: [persistAtom],
+});
